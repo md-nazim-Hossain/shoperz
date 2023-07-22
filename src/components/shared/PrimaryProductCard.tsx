@@ -9,12 +9,14 @@ type Props = {
 };
 function PrimaryProductCard({ product }: Props) {
   return (
-    <div className="border p-4 space-y-5 h-full rounded-md">
+    <div className="border p-4 space-y-5 rounded-md">
       <h6>{product?.category}</h6>
-      <h5 className="text-primary font-medium">{product?.model}</h5>
+      <div className="min-h-[40px]">
+        <h5 className="text-primary font-medium">{product?.model}</h5>
+      </div>
 
       <div className="relative w-[200px] aspect-square mx-auto group cursor-pointer">
-        <div className="w-full h-full aspect-square absolute top-0 left-0 z-10">
+        <div className="w-full h-full absolute top-0 left-0 z-10">
           <Image
             fill
             alt="Products Images"
@@ -38,13 +40,15 @@ function PrimaryProductCard({ product }: Props) {
               <h4 className="font-bold text-danger">
                 {discountPrice(product?.price, product?.discount)}
               </h4>
-              <h6 className="line-through text-tertiary">${product?.price}</h6>
+              <h6 className="line-through text-tertiary">
+                ${(product?.price).toFixed(2)}
+              </h6>
             </div>
             <IconButton />
           </>
         ) : (
           <>
-            <h4 className="font-bold">${product?.price}</h4>
+            <h4 className="font-bold">${(product?.price).toFixed(2)}</h4>
             <IconButton />
           </>
         )}
