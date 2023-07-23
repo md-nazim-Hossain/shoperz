@@ -2,13 +2,13 @@
 import { Banner } from "@/types/types";
 import React from "react";
 import PrimaryButton from "../shared/Buttons/PrimaryButton";
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { heroBannerData } from "@/data/bannerData";
 import { Pagination, A11y, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import HtmlParser from "react-html-parser";
 
 function Hero() {
   return (
@@ -17,7 +17,7 @@ function Hero() {
         clickable: true,
       }}
       loop={true}
-      //   autoplay
+      autoplay
       slidesPerView={1}
       modules={[Pagination, Autoplay, A11y]}
       className="w-full h-[calc(100vh-172px)]"
@@ -34,9 +34,7 @@ function Hero() {
             <div className="container h-full flex gap-5 flex-col lg:flex-row justify-between">
               <div className="w-full lg:w-1/2 h-full flex justify-center items-center">
                 <div className="w-full xl:w-3/5 ml-auto space-y-10">
-                  <p className="text-center lg:text-left text-2xl md:text-3xl uppercase">
-                    {banner?.title}
-                  </p>
+                  <div className="parser">{HtmlParser(banner?.title)}</div>
                   <div className="flex justify-center lg:justify-start items-center">
                     <PrimaryButton title="Find Out More" />
                   </div>

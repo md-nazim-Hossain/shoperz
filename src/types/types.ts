@@ -25,6 +25,7 @@ export type Product = {
   sold: number;
   totalReview: number;
   rating: number;
+  slug: string;
 };
 
 export type Brand = {
@@ -33,4 +34,13 @@ export type Brand = {
     alt: string;
   };
   link?: string;
+};
+
+export type Navbar = {
+  category: string;
+  href: string;
+  subCategory?: Array<{
+    name: string;
+    href: string;
+  }>;
 };

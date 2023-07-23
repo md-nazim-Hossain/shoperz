@@ -1,6 +1,7 @@
 import Categories from "@/components/categories/Categories";
 import Hero from "@/components/home/Hero";
 import Banner from "@/components/shared/Banner";
+import { ThemeButton } from "@/components/shared/Buttons/ThemeButton";
 import SwiperContainer from "@/components/shared/SwiperContainer";
 import { bannerData, heroBannerData } from "@/data/bannerData";
 import { products } from "@/data/productData";
@@ -9,7 +10,7 @@ export default function Home() {
   const filterProducts = products.filter((product) => product.discount === 0);
   return (
     <main className="space-y-10">
-      <Hero />;
+      <Hero />
       <SwiperContainer products={filterProducts} title="Featured Products" />
       <Categories />
       <SwiperContainer products={filterProducts} title="Best Sellers" />

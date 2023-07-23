@@ -19,7 +19,8 @@ export const products: Product[] = [
     id: "1",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 5,
+    slug: "smartphones",
   },
   {
     brand: "Nokia",
@@ -39,7 +40,8 @@ export const products: Product[] = [
     id: "2",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 5,
+    slug: "smartphones",
   },
   {
     brand: "Sony",
@@ -60,6 +62,7 @@ export const products: Product[] = [
     sold: 5,
     totalReview: 5,
     rating: 4.5,
+    slug: "tv-audio",
   },
   {
     brand: "Sony",
@@ -77,9 +80,10 @@ export const products: Product[] = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptate hic ipsa, fugiat rerum amet suscipit laborum dolorum deleniti doloribus.",
     ],
     id: "4",
-    sold: 5,
+    sold: 15,
     totalReview: 5,
     rating: 4.5,
+    slug: "tv-audio",
   },
   {
     brand: "Canon",
@@ -97,9 +101,10 @@ export const products: Product[] = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptate hic ipsa, fugiat rerum amet suscipit laborum dolorum deleniti doloribus.",
     ],
     id: "5",
-    sold: 5,
+    sold: 15,
     totalReview: 5,
     rating: 4.5,
+    slug: "photo-video",
   },
   {
     brand: "hp",
@@ -119,7 +124,8 @@ export const products: Product[] = [
     id: "6",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 5,
+    slug: "laptop-pc",
   },
   {
     brand: "Canon",
@@ -137,9 +143,10 @@ export const products: Product[] = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum voluptate hic ipsa, fugiat rerum amet suscipit laborum dolorum deleniti doloribus.",
     ],
     id: "7",
-    sold: 5,
+    sold: 18,
     totalReview: 5,
     rating: 4.5,
+    slug: "tv-audio",
   },
   {
     brand: "Huawei",
@@ -160,6 +167,7 @@ export const products: Product[] = [
     sold: 5,
     totalReview: 5,
     rating: 4.5,
+    slug: "gadgets",
   },
   {
     brand: "Apple",
@@ -180,6 +188,7 @@ export const products: Product[] = [
     sold: 5,
     totalReview: 5,
     rating: 4.5,
+    slug: "smartphones",
   },
   {
     brand: "Samsung",
@@ -200,6 +209,7 @@ export const products: Product[] = [
     sold: 5,
     totalReview: 5,
     rating: 4.5,
+    slug: "smartphones",
   },
   {
     brand: "Kindle",
@@ -220,6 +230,7 @@ export const products: Product[] = [
     sold: 5,
     totalReview: 5,
     rating: 4.5,
+    slug: "laptop-pc",
   },
   {
     brand: "Asus",
@@ -240,6 +251,7 @@ export const products: Product[] = [
     sold: 5,
     totalReview: 5,
     rating: 4.5,
+    slug: "photo-video",
   },
   {
     brand: "Huawei",
@@ -260,6 +272,7 @@ export const products: Product[] = [
     sold: 5,
     totalReview: 5,
     rating: 4.5,
+    slug: "smartphones",
   },
   {
     brand: "Apple",
@@ -280,6 +293,7 @@ export const products: Product[] = [
     sold: 5,
     totalReview: 5,
     rating: 4.5,
+    slug: "tv-audio",
   },
   {
     brand: "Stereo Bose",
@@ -300,6 +314,7 @@ export const products: Product[] = [
     sold: 5,
     totalReview: 5,
     rating: 4.5,
+    slug: "tv-audio",
   },
   {
     brand: "Xiaomi",
@@ -320,6 +335,7 @@ export const products: Product[] = [
     sold: 5,
     totalReview: 5,
     rating: 4.5,
+    slug: "smartphones",
   },
   {
     brand: "Samsung",
@@ -340,6 +356,7 @@ export const products: Product[] = [
     sold: 5,
     totalReview: 5,
     rating: 4.5,
+    slug: "smartphones",
   },
   {
     brand: "Honor",
@@ -360,6 +377,7 @@ export const products: Product[] = [
     sold: 5,
     totalReview: 5,
     rating: 4.5,
+    slug: "smartphones",
   },
   {
     brand: "Oppo",
@@ -380,5 +398,6 @@ export const products: Product[] = [
     sold: 5,
     totalReview: 5,
     rating: 4.5,
+    slug: "smartphones",
   },
 ];

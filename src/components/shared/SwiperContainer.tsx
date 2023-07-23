@@ -9,6 +9,7 @@ import PrimaryProductCard from "./PrimaryProductCard";
 import "swiper/css";
 import "swiper/css/navigation";
 import { LiaAngleLeftSolid, LiaAngleRightSolid } from "react-icons/lia";
+import TitleWrapper from "./TitleWrapper";
 
 type Props = {
   title: string;
@@ -20,9 +21,7 @@ function SwiperContainer({ title, products }: Props) {
   return (
     <div className="space-y-5 container">
       <div className="flex justify-between items-center">
-        <h3 className="text-tertiary w-max font-medium border-b border-b-primary pb-1">
-          {title}
-        </h3>
+        <TitleWrapper title={title} />
         <div>
           <button
             onClick={() => {
