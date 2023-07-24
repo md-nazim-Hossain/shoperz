@@ -7,6 +7,7 @@ import { CiShuffle } from "react-icons/ci";
 import { BiSolidHeart, BiHeart } from "react-icons/bi";
 import { HiShoppingBag } from "react-icons/hi";
 import { discountPrice } from "@/utils/discount";
+import Rating from "./Rating";
 
 type Props = {
   product: Product;
@@ -39,7 +40,7 @@ function ListViewProducts({ product }: Props) {
           <div className="min-h-[40px]">
             <h5 className="text-primary font-medium">{product?.model}</h5>
           </div>
-          <div></div>
+          <Rating value={product?.rating} />
 
           <ul className="list-disc space-y-2">
             {product?.description.map((item: string, index: number) => (

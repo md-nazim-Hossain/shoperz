@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import IconButton from "./Buttons/IconButton";
-import Rating from "react-rating";
 import { Product } from "@/types/types";
 import { discountPrice } from "@/utils/discount";
+import Rating from "./Rating";
 
 type Props = {
   product: Product;
@@ -26,8 +26,8 @@ function SecondaryProductCard({ product }: Props) {
         />
       </div>
       <div className="space-y-5 flex-1">
-        <h5 className="text-primary font-medium">{product?.model}</h5>
-        <div></div>
+        <h5 className="text-primary font-medium h-12">{product?.model}</h5>
+        <Rating value={product?.rating} />
         <div className="flex justify-between items-center h-12">
           {product?.discount > 0 ? (
             <>

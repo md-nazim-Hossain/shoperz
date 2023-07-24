@@ -1,27 +1,32 @@
 "use client";
 import React from "react";
 import { CollapsibleContainer } from "./CollapsibleContainer";
-import { groupProductBySlug } from "@/utils/category-products";
+import { groupProduct } from "@/utils/category-products";
 import Link from "next/link";
 import { products } from "@/data/productData";
+import FilterByBrands from "../productsFilter/FilterByBrands";
+import FilterByRating from "../productsFilter/FilterByRating";
+import Banner from "./Banner";
 
 function SideBar() {
-  const data = groupProductBySlug();
+  const { slug, brands, rating } = groupProduct("");
 
   return (
-    <div className="bg-light-gray rounded-md">
-      <div className="p-5 space-y-5">
+    <div className="space-y-5">
+      <div className="p-5 space-y-5 bg-light-gray rounded-md">
         <p className="font-medium">Categories</p>
         <CollapsibleContainer
           trigger={
-            <h4 className="w-full text-sm font-semibold flex justify-between items-center">
-              <span>All</span>
-              <span className="text-secondary/60">({products?.length})</span>
-            </h4>
+            <Link href={"/shop"} className="w-full">
+              <h4 className="w-full  text-sm font-semibold flex justify-between items-center">
+                <span>All</span>
+                <span className="text-secondary/60">({products?.length})</span>
+              </h4>
+            </Link>
           }
         >
           <div className="space-y-5">
-            {Array.from(data)?.map(([key, value], index: number) => {
+            {Array.from(slug)?.map(([key, value], index: number) => {
               return (
                 <Link
                   href={`/shop/${key}`}
@@ -36,6 +41,16 @@ function SideBar() {
           </div>
         </CollapsibleContainer>
       </div>
+      <FilterByBrands product={brands} />
+      <FilterByRating product={rating} />
+      <Banner
+        banner={{
+          image: "/assets/images/banner/4.svg",
+          color: ["#F2FFF7", "#C3F4FF"],
+          title: "PORTABLE SPEAKERS COLLECTION 2023",
+        }}
+        isCol={true}
+      />
     </div>
   );
 }

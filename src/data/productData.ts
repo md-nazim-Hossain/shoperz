@@ -61,7 +61,7 @@ export const products: Product[] = [
     id: "3",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 4,
     slug: "tv-audio",
   },
   {
@@ -82,7 +82,7 @@ export const products: Product[] = [
     id: "4",
     sold: 15,
     totalReview: 5,
-    rating: 4.5,
+    rating: 4,
     slug: "tv-audio",
   },
   {
@@ -103,7 +103,7 @@ export const products: Product[] = [
     id: "5",
     sold: 15,
     totalReview: 5,
-    rating: 4.5,
+    rating: 4,
     slug: "photo-video",
   },
   {
@@ -124,7 +124,7 @@ export const products: Product[] = [
     id: "6",
     sold: 5,
     totalReview: 5,
-    rating: 5,
+    rating: 3,
     slug: "laptop-pc",
   },
   {
@@ -145,7 +145,7 @@ export const products: Product[] = [
     id: "7",
     sold: 18,
     totalReview: 5,
-    rating: 4.5,
+    rating: 3,
     slug: "tv-audio",
   },
   {
@@ -166,7 +166,7 @@ export const products: Product[] = [
     id: "8",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 3,
     slug: "gadgets",
   },
   {
@@ -187,7 +187,7 @@ export const products: Product[] = [
     id: "9",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 2,
     slug: "smartphones",
   },
   {
@@ -208,7 +208,7 @@ export const products: Product[] = [
     id: "10",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 2,
     slug: "smartphones",
   },
   {
@@ -229,7 +229,7 @@ export const products: Product[] = [
     id: "11",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 2,
     slug: "laptop-pc",
   },
   {
@@ -250,7 +250,7 @@ export const products: Product[] = [
     id: "12",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 2,
     slug: "photo-video",
   },
   {
@@ -271,7 +271,7 @@ export const products: Product[] = [
     id: "13",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 1,
     slug: "smartphones",
   },
   {
@@ -292,7 +292,7 @@ export const products: Product[] = [
     id: "14",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 1,
     slug: "tv-audio",
   },
   {
@@ -313,7 +313,7 @@ export const products: Product[] = [
     id: "15",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 1,
     slug: "tv-audio",
   },
   {
@@ -334,7 +334,7 @@ export const products: Product[] = [
     id: "16",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 1,
     slug: "smartphones",
   },
   {
@@ -355,7 +355,7 @@ export const products: Product[] = [
     id: "17",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 1,
     slug: "smartphones",
   },
   {
@@ -376,7 +376,7 @@ export const products: Product[] = [
     id: "18",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 5,
     slug: "smartphones",
   },
   {
@@ -397,7 +397,7 @@ export const products: Product[] = [
     id: "1",
     sold: 5,
     totalReview: 5,
-    rating: 4.5,
+    rating: 5,
     slug: "smartphones",
   },
 ];

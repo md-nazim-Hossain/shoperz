@@ -1,13 +1,19 @@
 "use client";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "../ui/button";
 import { BsGrid3X3GapFill } from "react-icons/bs";
 import { FaListUl } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "@/redux/Store";
 import { toggleView } from "@/redux/slices/ToggleViewSlice";
+import { Product } from "@/types/types";
 
-function ShopSearchBar() {
+type Props = {
+  filterProduct: Product[];
+  showing: number;
+  totalSkip: number;
+};
+function ShopSearchBar({ filterProduct, showing, totalSkip }: Props) {
   const pathname = usePathname();
   const text = pathname.split("/");
   const dispatch = useAppDispatch();
@@ -18,8 +24,14 @@ function ShopSearchBar() {
       <div className="pb-5 border-b border-b-light-gray flex justify-between items-center">
         <h2>{text[text.length - 1]}</h2>
         <h5>
-          Showing <span className="font-bold text-tertiary">1-20</span> of{" "}
-          <span className="font-bold text-tertiary">19</span>
+          Showing{" "}
+          <span className="font-bold text-tertiary">
+            {totalSkip}-{showing}
+          </span>{" "}
+          of{" "}
+          <span className="font-bold text-tertiary">
+            {filterProduct?.length}
+          </span>
         </h5>
       </div>
       <div className="pt-5">

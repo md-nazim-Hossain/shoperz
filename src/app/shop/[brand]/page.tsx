@@ -1,14 +1,14 @@
 "use client";
 import Shop from "@/components/shop/Shop";
 import ShopContainer from "@/components/shop/ShopContainer";
-import { groupProductBySlug } from "@/utils/category-products";
+import { groupProduct } from "@/utils/category-products";
 import { useParams } from "next/navigation";
 import React from "react";
 
 function Page() {
-  const map = groupProductBySlug();
+  const { slug } = groupProduct("category");
   const { brand } = useParams();
-  const products = map.get(brand);
+  const products = slug.get(brand);
 
   return <ShopContainer products={products} />;
 }
