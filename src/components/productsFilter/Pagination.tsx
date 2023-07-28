@@ -20,16 +20,16 @@ function Pagination({
   totalSkip,
 }: Props) {
   const size = Math.ceil(totalProduct?.length / 10);
+  const totalLen = totalProduct?.length;
 
   return (
     <div className="px-5 py-3 border rounded-md flex items-center justify-between">
       <h5>
         Showing{" "}
         <span className="font-bold text-tertiary">
-          {totalSkip}-{showing}
+          {totalSkip}-{totalLen > showing ? showing : totalLen}
         </span>{" "}
-        of{" "}
-        <span className="font-bold text-tertiary">{totalProduct?.length}</span>
+        of <span className="font-bold text-tertiary">{totalLen}</span>
       </h5>
       <div className="flex items-center gap-3">
         <button

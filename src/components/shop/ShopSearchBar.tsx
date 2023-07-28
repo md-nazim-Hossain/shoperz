@@ -18,6 +18,7 @@ function ShopSearchBar({ filterProduct, showing, totalSkip }: Props) {
   const text = pathname.split("/");
   const dispatch = useAppDispatch();
   const { view } = useAppSelector((state) => state.view);
+  const totalProductLen = filterProduct?.length;
 
   return (
     <div className="p-5 border rounded-md border-light-gray">
@@ -26,12 +27,9 @@ function ShopSearchBar({ filterProduct, showing, totalSkip }: Props) {
         <h5>
           Showing{" "}
           <span className="font-bold text-tertiary">
-            {totalSkip}-{showing}
+            {totalSkip}-{totalProductLen > showing ? showing : totalProductLen}
           </span>{" "}
-          of{" "}
-          <span className="font-bold text-tertiary">
-            {filterProduct?.length}
-          </span>
+          of <span className="font-bold text-tertiary">{totalProductLen}</span>
         </h5>
       </div>
       <div className="pt-5">
