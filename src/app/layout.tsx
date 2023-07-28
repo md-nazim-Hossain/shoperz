@@ -7,6 +7,8 @@ import { ThemeProvider } from "@/components/shared/layout/ThemeProvider";
 import Navbar from "@/components/shared/layout/Navbar";
 import TopProducts from "@/components/shared/layout/TopProducts";
 import Providers from "@/components/shared/layout/Provider";
+import TopBar from "@/components/shared/layout/TopBar";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Shoperz - Home",
@@ -28,6 +30,8 @@ export default function RootLayout({
       <body className={roboto.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Providers>
+            <Toaster />
+            <TopBar />
             <Navbar />
             {children}
             <div className="space-y-10 mt-10">

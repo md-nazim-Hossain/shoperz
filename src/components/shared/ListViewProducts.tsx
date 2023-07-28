@@ -8,12 +8,24 @@ import { BiSolidHeart, BiHeart } from "react-icons/bi";
 import { HiShoppingBag } from "react-icons/hi";
 import { discountPrice } from "@/utils/discount";
 import Rating from "./Rating";
+import { useAppDispatch, useAppSelector } from "@/redux/Store";
+import {
+  toggleCompareList,
+  toggleWishList,
+} from "@/redux/slices/ToggleAddListProductSlice";
+import { useToast } from "../ui/use-toast";
 
 type Props = {
   product: Product;
 };
 function ListViewProducts({ product }: Props) {
-  const [active, setActive] = useState(false);
+  const { wishListProduct, compareListProduct } = useAppSelector(
+    (state) => state.toggleAddProductList
+  );
+  const isWishList = wishListProduct.includes(product);
+  const isCompareList = compareListProduct.includes(product);
+  const dispatch = useAppDispatch();
+  const { toast } = useToast();
   return (
     <div className="group cursor-pointer p-5 border border-light-gray rounded-md lg:flex gap-5 space-y-5 lg:space-y-0">
       <div className="md:flex flex-1 items-center gap-5">
@@ -55,14 +67,43 @@ function ListViewProducts({ product }: Props) {
         <div className="space-y-5">
           <div className="flex items-center gap-2">
             <PrimaryButton
+              method={() => {
+                dispatch(toggleCompareList(product));
+
+                toast({
+                  title: isCompareList
+                    ? "Removed from Compare List"
+                    : "Added to Compare List",
+                  description: (
+                    <h6 className="text-tertiary">
+                      <span className="font-semibold">{product.model}</span>{" "}
+                      {isWishList ? "removed" : "added"} to your compare list
+                    </h6>
+                  ),
+                });
+              }}
               title="Compare"
               className="bg-white border text-secondary/70 font-normal"
               Icon={CiShuffle}
             />
             <PrimaryButton
-              title="Whitelist"
+              method={() => {
+                dispatch(toggleWishList(product));
+                toast({
+                  title: isWishList
+                    ? "Removed from Wishlist"
+                    : "Added to Wishlist",
+                  description: (
+                    <h6 className="text-tertiary">
+                      <span className="font-semibold">{product.model}</span>{" "}
+                      {isWishList ? "removed" : "added"} to your Wishlist
+                    </h6>
+                  ),
+                });
+              }}
+              title="Wishlist"
               className="bg-white border text-secondary/70 font-normal"
-              Icon={active ? BiSolidHeart : BiHeart}
+              Icon={isWishList ? BiSolidHeart : BiHeart}
             />
           </div>
 

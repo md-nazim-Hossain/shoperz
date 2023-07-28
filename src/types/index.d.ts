@@ -1,3 +1,5 @@
+import { IconType } from "react-icons/lib";
+
 export type Banner = {
   color: string[];
   image: string;
@@ -49,4 +51,17 @@ export type CardPolicyProps = {
   title: string;
   image: string;
   text: string;
+};
+
+export type SocialProps = {
+  Icon: IconType;
+  link: string;
+};
+
+export type TopBarFeaturesProps = Omit<SocialProps> & {
+  title: string;
+};
+
+export type CurrencyProps = Pick<TopBarFeaturesProps, "Icon" | "title"> & {
+  value: string;
 };
