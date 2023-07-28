@@ -1,4 +1,4 @@
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 import { useEffect, useState } from "react";
 
 export const usePagination = (

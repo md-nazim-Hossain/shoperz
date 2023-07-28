@@ -2,7 +2,7 @@
 import React from "react";
 import { SelectComponents } from "../SelectComponents";
 import { navData } from "@/data/navData";
-import { Navbar } from "@/types/types";
+import { Navbar } from "@/types";
 import {
   Select,
   SelectContent,

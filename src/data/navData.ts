@@ -1,4 +1,4 @@
-import { Navbar } from "@/types/types";
+import { Navbar } from "@/types";
 
 export const navData: Navbar[] = [
   {

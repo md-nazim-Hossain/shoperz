@@ -1,5 +1,5 @@
 import { products } from "@/data/productData";
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 
 export const groupProduct = (
   filterType: "category" | "brand" | "rating" | ""

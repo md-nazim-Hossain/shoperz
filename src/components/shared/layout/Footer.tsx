@@ -1,5 +1,5 @@
 import { card, categories, contact, links, service } from "@/data/footer";
-import { Footer } from "@/types/types";
+import { Footer } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -8,14 +8,14 @@ import { FaLocationArrow } from "react-icons/fa";
 function Footer() {
   return (
     <div className="space-y-10">
-      <div className="bg-gray-800">
-        <div className="container text-white gap-5 py-5 flex flex-col md:flex-row justify-between items-center">
+      <div className="bg-gray-800 py-5">
+        <div className="container text-white gap-5 flex flex-col md:flex-row justify-between items-center">
           <h4 className="text-center md:text-left">
             <span className="font-bold">Subscribe to Our Newsletter</span> - get
             a <span className="font-bold">$20 Coupon</span> for your first
             order!{" "}
           </h4>
-          <div className="flex w-full sm:w-[400px] bg-white rounded-[25px] overflow-hidden">
+          <div className="flex w-11/12 sm:w-[400px] bg-white rounded-[25px] overflow-hidden">
             <input
               className="w-full px-5 py-3 text-black bg-transparent border-none outline-none"
               type="email"

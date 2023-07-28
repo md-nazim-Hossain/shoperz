@@ -1,5 +1,5 @@
 "use client";
-import { Banner } from "@/types/types";
+import { Banner } from "@/types";
 import Image from "next/image";
 import React, { CSSProperties } from "react";
 

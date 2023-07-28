@@ -44,3 +44,9 @@ export type Navbar = {
     href: string;
   }>;
 };
+
+export type CardPolicyProps = {
+  title: string;
+  image: string;
+  text: string;
+};

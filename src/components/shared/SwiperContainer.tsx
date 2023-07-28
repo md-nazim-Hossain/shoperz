@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 import PrimaryProductCard from "./PrimaryProductCard";
 import "swiper/css";
 import "swiper/css/navigation";

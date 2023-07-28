@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import IconButton from "./Buttons/IconButton";
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 import { discountPrice } from "@/utils/discount";
 import Rating from "./Rating";
 

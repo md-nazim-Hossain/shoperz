@@ -33,8 +33,8 @@ export default function RootLayout({
             <div className="space-y-10 mt-10">
               <Brand />
               <TopProducts />
-              <Footer />
             </div>
+            <Footer />
           </Providers>
         </ThemeProvider>
       </body>

@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import TitleWrapper from "./TitleWrapper";
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 import SecondaryProductCard from "./SecondaryProductCard";
 import SecondaryCardSkeleton from "./skeleton/SecondaryCardSkeleton";
 

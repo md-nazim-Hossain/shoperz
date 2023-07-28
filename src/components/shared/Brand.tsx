@@ -1,5 +1,5 @@
 import { brandsData } from "@/data/brandsData";
-import { Brand } from "@/types/types";
+import { Brand } from "@/types";
 import Image from "next/image";
 import React from "react";
 

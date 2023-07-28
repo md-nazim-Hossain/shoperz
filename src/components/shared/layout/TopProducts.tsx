@@ -1,6 +1,6 @@
 import React from "react";
 import { products } from "@/data/productData";
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 import TopProduct from "../TopProduct";
 
 function TopProducts() {
@@ -20,7 +20,7 @@ function TopProducts() {
     .slice(0, 3);
 
   return (
-    <div className="bg-light-gray py-5">
+    <div className="bg-light-gray py-5 pb-10">
       <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {/* Top rated products */}
         <TopProduct products={topRated} title="Top Rated" />

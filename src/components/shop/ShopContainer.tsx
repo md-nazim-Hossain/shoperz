@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import PrimaryProductCard from "../shared/PrimaryProductCard";
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 import { useAppSelector } from "@/redux/Store";
 import ListViewProducts from "../shared/ListViewProducts";
 import ShopSearchBar from "./ShopSearchBar";

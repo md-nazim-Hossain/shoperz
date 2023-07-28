@@ -1,5 +1,5 @@
 "use client";
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 import React, { useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { LiaAngleDownSolid, LiaAngleUpSolid } from "react-icons/lia";

@@ -129,7 +129,14 @@ html {
 }
 
 .container {
-  width: calc(100% - 40px);
+  width: calc(100% - 20px);
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0%;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: calc(100% - 60px);
+  }
 }

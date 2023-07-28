@@ -1,5 +1,5 @@
 "use client";
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 import Image from "next/image";
 import React, { useState } from "react";
 import PrimaryButton from "./Buttons/PrimaryButton";

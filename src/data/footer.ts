@@ -1,4 +1,4 @@
-import { Footer } from "@/types/types";
+import { Footer } from "@/types";
 
 export const categories: Footer[] = [
   {

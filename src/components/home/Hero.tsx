@@ -1,5 +1,5 @@
 "use client";
-import { Banner } from "@/types/types";
+import { Banner } from "@/types";
 import React from "react";
 import PrimaryButton from "../shared/Buttons/PrimaryButton";
 import { Swiper, SwiperSlide } from "swiper/react";

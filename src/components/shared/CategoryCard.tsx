@@ -2,7 +2,7 @@ import React from "react";
 import IconButton from "./Buttons/IconButton";
 import { BsArrowRight } from "react-icons/bs";
 import Image from "next/image";
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 
 type Props = {
   product: Product;

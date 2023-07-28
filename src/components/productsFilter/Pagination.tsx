@@ -1,6 +1,6 @@
 "use client";
 
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 import React, { Dispatch, SetStateAction } from "react";
 import { LiaAngleLeftSolid, LiaAngleRightSolid } from "react-icons/lia";
 import PrimaryButton from "../shared/Buttons/PrimaryButton";

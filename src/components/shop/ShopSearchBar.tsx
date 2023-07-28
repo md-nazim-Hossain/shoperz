@@ -6,7 +6,7 @@ import { BsGrid3X3GapFill } from "react-icons/bs";
 import { FaListUl } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "@/redux/Store";
 import { toggleView } from "@/redux/slices/ToggleViewSlice";
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 
 type Props = {
   filterProduct: Product[];

@@ -1,6 +1,6 @@
 import React from "react";
 import { Checkbox } from "../ui/checkbox";
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 import Rating from "../shared/Rating";
 
 type Props = {
