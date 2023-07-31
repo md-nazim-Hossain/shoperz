@@ -42,7 +42,7 @@ function Footer() {
                     className="space-y-2 text-center md:text-left"
                   >
                     <p className="font-medium">{item.title}</p>
-                    <h5>{item.text}</h5>
+                    <h5 className="hover:text-tertiary">{item.text}</h5>
                   </div>
                 );
               }
@@ -93,7 +93,7 @@ const FooterLink: React.FC<{ title: string; data: Footer[] }> = ({
               href={link.link}
               key={index}
               target={link.new_tab ? "_blank" : ""}
-              className="text-secondary/70 text-sm block"
+              className="text-secondary/70 hover:text-tertiary duration-300 text-sm block"
             >
               {link.title}
             </Link>

@@ -7,19 +7,28 @@ type Props = {
   className?: string;
   Icon?: IconType;
   type?: "button" | "submit" | "reset";
+  size?: number;
+
 };
-function IconButton({ method, className, Icon, type = "button" }: Props) {
+function IconButton({
+  method,
+  className,
+  Icon,
+  type = "button",
+  size = 16,
+
+}: Props) {
   return (
     <button
       type={type}
       onClick={method}
       className={twMerge(
-        "w-9 aspect-square rounded-full bg-gray-200 flex justify-center items-center",
+        "w-9 duration-100 aspect-square rounded-full bg-gray-200 flex justify-center items-center ",
         className
       )}
     >
       {Icon ? (
-        <Icon size={16} className="text-white" />
+        <Icon size={size}  />
       ) : (
         <Image
           src="/assets/logo/shop.svg"

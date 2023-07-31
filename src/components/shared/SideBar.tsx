@@ -1,15 +1,19 @@
 "use client";
 import React from "react";
 import { CollapsibleContainer } from "./CollapsibleContainer";
-import { groupProduct } from "@/utils/category-products";
+import { groupProduct } from "@/utils/grouping-products";
 import Link from "next/link";
 import { products } from "@/data/productData";
 import FilterByBrands from "../productsFilter/FilterByBrands";
 import FilterByRating from "../productsFilter/FilterByRating";
 import Banner from "./Banner";
+import FilterByPrice from "../productsFilter/FilterByPrice";
+import { useParams } from "next/navigation";
+import FilterByRamProcessor from "../productsFilter/FilterByRamProcessor";
 
 function SideBar() {
-  const { slug, brands, rating } = groupProduct("");
+  const { category, brands, rating, price, processor, ram } = groupProduct("");
+  const { brand } = useParams();
 
   return (
     <div className="space-y-5">
@@ -26,7 +30,7 @@ function SideBar() {
           }
         >
           <div className="space-y-5">
-            {Array.from(slug)?.map(([key, value], index: number) => {
+            {Array.from(category)?.map(([key, value], index: number) => {
               return (
                 <Link
                   href={`/shop/${key}`}
@@ -42,6 +46,13 @@ function SideBar() {
         </CollapsibleContainer>
       </div>
       <FilterByBrands product={brands} />
+      <FilterByPrice product={price} />
+      {brand === "smartphones" && (
+        <>
+          <FilterByRamProcessor product={ram} filterType="RAM Memory" />
+          <FilterByRamProcessor product={processor} filterType="Processor" />
+        </>
+      )}
       <FilterByRating product={rating} />
       <Banner
         banner={{

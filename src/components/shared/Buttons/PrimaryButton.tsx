@@ -8,6 +8,7 @@ type Props = {
   type?: "button" | "submit" | "reset";
   method?: () => any;
   className?: string;
+  iconStyle?: string;
 };
 function PrimaryButton({
   title,
@@ -15,18 +16,19 @@ function PrimaryButton({
   type = "button",
   method,
   className,
+  iconStyle
 }: Props) {
   return (
     <button
       type={type}
       onClick={method}
       className={twMerge(
-        "bg-primary font-medium text-white px-5 py-3 rounded-3xl flex justify-center items-center space-x-2",
+        "bg-primary/70 hover:bg-primary duration-300 font-medium text-white px-5 py-3 rounded-3xl flex justify-center items-center space-x-2",
         className
       )}
     >
       <span>{title}</span>
-      {Icon && <Icon />}
+      {Icon && <Icon className={iconStyle}/>}
     </button>
   );
 }

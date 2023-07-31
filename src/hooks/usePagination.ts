@@ -10,8 +10,9 @@ export const usePagination = (
   const showing = (skip - 1) * limit;
   const totalSkip = skip * limit;
   useEffect(() => {
+    if (showing > products.length) setProduct([]);
     setProduct(products?.slice(showing, totalSkip));
-  }, [skip]);
+  }, [skip, limit]);
 
   return {
     data: product,

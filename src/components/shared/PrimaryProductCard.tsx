@@ -3,19 +3,30 @@ import React from "react";
 import IconButton from "./Buttons/IconButton";
 import { Product } from "@/types";
 import { discountPrice } from "@/utils/discount";
+import { TooltipContainer } from "./ToolTipContainer";
 
+import HoverVisibleButton from "./Buttons/HoverVisibleButton";
+import Link from "next/link";
 type Props = {
   product: Product;
 };
 function PrimaryProductCard({ product }: Props) {
-  return (
-    <div className="border p-4 space-y-5 rounded-md">
-      <h6>{product?.category}</h6>
-      <div className="min-h-[40px]">
-        <h5 className="text-primary font-medium">{product?.model}</h5>
-      </div>
 
-      <div className="relative w-[200px] aspect-square mx-auto group cursor-pointer">
+  return (
+    <div className="group hover:shadow-md border p-4 space-y-5 rounded-md cursor-pointer overflow-hidden">
+      <h6>{product?.category}</h6>
+
+      <TooltipContainer
+        trigger={
+          <h5 className="text-primary font-medium line-clamp-1">
+            {product?.model}
+          </h5>
+        }
+      >
+        <h5 className="text-primary font-medium">{product?.model}</h5>
+      </TooltipContainer>
+
+      <div className="relative w-[200px] aspect-square mx-auto">
         <div className="w-full h-full absolute top-0 left-0 z-10">
           <Image
             fill
@@ -33,9 +44,8 @@ function PrimaryProductCard({ product }: Props) {
           />
         </div>
       </div>
-      <div className="flex justify-between items-center h-12">
+      <div className="flex justify-between items-center h-12 relative">
         {product?.discount > 0 ? (
-          <>
             <div>
               <h4 className="font-bold text-danger">
                 {discountPrice(product?.price, product?.discount)}
@@ -44,15 +54,16 @@ function PrimaryProductCard({ product }: Props) {
                 ${(product?.price).toFixed(2)}
               </h6>
             </div>
-            <IconButton />
-          </>
+        
         ) : (
-          <>
-            <h4 className="font-bold">${(product?.price).toFixed(2)}</h4>
-            <IconButton />
-          </>
+          <h4 className="font-bold">${(product?.price).toFixed(2)}</h4>
         )}
+        <Link href={`/shop/${product?.slug}/${product.subCategory.toLowerCase()}/${product?.brand}`}>
+          <IconButton className="group-hover:bg-primary/70 hover:!bg-primary"/>
+        </Link>
+       <HoverVisibleButton product={product}/>
       </div>
+      
     </div>
   );
 }

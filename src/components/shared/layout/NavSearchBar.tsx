@@ -33,6 +33,7 @@ function NavSearchBar() {
 
           <SheetContainer
             title="Compare List Products"
+            type="comparelist"
             products={compareListProduct}
             trigger={
               <button className="relative">
@@ -45,6 +46,7 @@ function NavSearchBar() {
           />
           <SheetContainer
             title="Wish List Products"
+            type="wishlist"
             products={wishListProduct}
             trigger={
               <button className="relative">

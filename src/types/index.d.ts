@@ -18,11 +18,13 @@ export type Product = {
   price: number;
   discount: number;
   category: string;
-  subCategory?: string;
+  subCategory: string;
   brand: string;
   description: string[];
   color: string[];
   model: string;
+  ram?: "2GB" | "4GB" | "6GB" | "8GB" | "12GB" | "16GB" | "32GB";
+  processor?: "octa-core" | "quad-core" | "hexa-core" | "single-core";
   id: string;
   sold: number;
   totalReview: number;
@@ -32,7 +34,7 @@ export type Product = {
 
 export type Brand = {
   image: {
-    src: string;
+    src: string[];
     alt: string;
   };
   link?: string;

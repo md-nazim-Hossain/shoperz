@@ -127,6 +127,13 @@ html {
     @apply font-semibold ml-2;
   }
 }
+/* 
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+} */
 
 /* scroll bar design */
 body::-webkit-scrollbar,

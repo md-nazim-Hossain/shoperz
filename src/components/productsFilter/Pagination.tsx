@@ -4,6 +4,8 @@ import { Product } from "@/types";
 import React, { Dispatch, SetStateAction } from "react";
 import { LiaAngleLeftSolid, LiaAngleRightSolid } from "react-icons/lia";
 import PrimaryButton from "../shared/Buttons/PrimaryButton";
+import { SelectComponents } from "../shared/SelectComponents";
+import { SelectGroup, SelectItem } from "../ui/select";
 
 type Props = {
   showing: number;
@@ -11,6 +13,9 @@ type Props = {
   setActivePage: Dispatch<SetStateAction<number>>;
   activePage: number;
   totalProduct: Product[];
+  setShowingProducts: Dispatch<SetStateAction<number>>;
+  showingProducts: number;
+  isShowSelect?: boolean;
 };
 function Pagination({
   showing,
@@ -18,19 +23,45 @@ function Pagination({
   setActivePage,
   totalProduct,
   totalSkip,
+  setShowingProducts,
+  showingProducts,
+  isShowSelect = false,
 }: Props) {
-  const size = Math.ceil(totalProduct?.length / 10);
+  const size = Math.ceil(totalProduct?.length / showingProducts);
   const totalLen = totalProduct?.length;
 
   return (
     <div className="px-5 py-3 border rounded-md flex items-center justify-between">
-      <h5>
-        Showing{" "}
-        <span className="font-bold text-tertiary">
-          {totalSkip}-{totalLen > showing ? showing : totalLen}
-        </span>{" "}
-        of <span className="font-bold text-tertiary">{totalLen}</span>
-      </h5>
+      <div className="flex flex-1 items-center gap-5">
+        <h5>
+          Showing{" "}
+          <span className="font-bold text-tertiary">
+            {totalSkip}-{totalLen > showing ? showing : totalLen}
+          </span>{" "}
+          of <span className="font-bold text-tertiary">{totalLen}</span>
+        </h5>
+        {isShowSelect && (
+          <SelectComponents
+            onChange={(value) => setShowingProducts(+value)}
+            placeholder="5"
+            className="w-[60px] h-[30px] rounded outline-none p-2 focus:ring-0 focus:ring-offset-0"
+          >
+            <SelectGroup>
+              {[5, 10, 20].map((item: number) => {
+                return (
+                  <SelectItem
+                    disabled={totalLen < item}
+                    key={item}
+                    value={item + ""}
+                  >
+                    {item}
+                  </SelectItem>
+                );
+              })}
+            </SelectGroup>
+          </SelectComponents>
+        )}
+      </div>
       <div className="flex items-center gap-3">
         <button
           disabled={activePage === 1}

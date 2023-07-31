@@ -13,8 +13,13 @@ type Props = {
 };
 function ShopContainer({ products }: Props) {
   const [activePage, setActivePage] = useState(1);
+  const [showingProducts, setShowingProducts] = useState(10);
   const { view } = useAppSelector((state) => state.view);
-  const { data, showing, totalSkip } = usePagination(products, activePage, 10);
+  const { data, showing, totalSkip } = usePagination(
+    products,
+    activePage,
+    showingProducts
+  );
   return (
     <div className=" space-y-5">
       <ShopSearchBar
@@ -25,13 +30,13 @@ function ShopContainer({ products }: Props) {
       <div>
         {view === "grid" ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-            {data.map((product: Product, index: number) => (
+            {data?.map((product: Product, index: number) => (
               <PrimaryProductCard product={product} key={index} />
             ))}
           </div>
         ) : (
           <div className="space-y-5">
-            {data.map((product: Product, index: number) => (
+            {data?.map((product: Product, index: number) => (
               <ListViewProducts product={product} key={index} />
             ))}
           </div>
@@ -43,6 +48,8 @@ function ShopContainer({ products }: Props) {
         totalProduct={products}
         activePage={activePage}
         setActivePage={setActivePage}
+        setShowingProducts={setShowingProducts}
+        showingProducts={showingProducts}
       />
     </div>
   );

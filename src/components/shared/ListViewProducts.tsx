@@ -1,7 +1,7 @@
 "use client";
 import { Product } from "@/types";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import PrimaryButton from "./Buttons/PrimaryButton";
 import { CiShuffle } from "react-icons/ci";
 import { BiSolidHeart, BiHeart } from "react-icons/bi";
@@ -14,6 +14,7 @@ import {
   toggleWishList,
 } from "@/redux/slices/ToggleAddListProductSlice";
 import { useToast } from "../ui/use-toast";
+import { TooltipContainer } from "./ToolTipContainer";
 
 type Props = {
   product: Product;
@@ -27,10 +28,10 @@ function ListViewProducts({ product }: Props) {
   const dispatch = useAppDispatch();
   const { toast } = useToast();
   return (
-    <div className="group cursor-pointer p-5 border border-light-gray rounded-md lg:flex gap-5 space-y-5 lg:space-y-0">
+    <div className="group p-5 border border-light-gray rounded-md lg:flex gap-5 space-y-5 lg:space-y-0">
       <div className="md:flex flex-1 items-center gap-5">
         <div className="w-full md:w-auto sm:aspect-square h-[240px] flex justify-center items-center">
-          <div className="w-[200px] aspect-square relative">
+          <div className="w-[200px] cursor-pointer aspect-square relative">
             <Image
               fill
               alt="Products Images"
@@ -49,9 +50,15 @@ function ListViewProducts({ product }: Props) {
           <h6>
             {product?.category}, {product?.subCategory}
           </h6>
-          <div className="min-h-[40px]">
+          <TooltipContainer
+            trigger={
+              <h5 className="text-primary font-medium line-clamp-2">
+                {product?.model}
+              </h5>
+            }
+          >
             <h5 className="text-primary font-medium">{product?.model}</h5>
-          </div>
+          </TooltipContainer>
           <Rating value={product?.rating} />
 
           <ul className="list-disc space-y-2">
@@ -83,8 +90,9 @@ function ListViewProducts({ product }: Props) {
                 });
               }}
               title="Compare"
-              className="bg-white border text-secondary/70 font-normal"
+              className="bg-white group/compare border hover:bg-gray-200 hover:border-transparent hover:text-tertiary duration-300 text-secondary/70 font-normal"
               Icon={CiShuffle}
+              iconStyle="group-hover/compare:text-primary"
             />
             <PrimaryButton
               method={() => {
@@ -102,8 +110,9 @@ function ListViewProducts({ product }: Props) {
                 });
               }}
               title="Wishlist"
-              className="bg-white border text-secondary/70 font-normal"
+              className="bg-white group/wishList border hover:bg-gray-200 hover:border-transparent hover:text-tertiary duration-300 text-secondary/70 font-normal"
               Icon={isWishList ? BiSolidHeart : BiHeart}
+              iconStyle="group-hover/wishList:text-red-500"
             />
           </div>
 

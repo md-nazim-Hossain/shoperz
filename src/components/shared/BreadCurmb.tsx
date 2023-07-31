@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { BsSlash } from "react-icons/bs";
@@ -13,10 +14,12 @@ function BreadCurmb() {
       }`}
     >
       {splitPathname.map((path: string, index: number) => (
-        <h5 className="capitalize space-x-1 flex items-center" key={index}>
-          <span>{path}</span>
-          {index !== splitPathname.length - 1 && <BsSlash size={24} />}
-        </h5>
+        <Link key={index} href={"/"+path}>
+          <h5 className="capitalize space-x-1 flex items-center hover:text-tertiary" >
+            <span>{path}</span>
+            {index !== splitPathname.length - 1 && <BsSlash size={24} />}
+          </h5>
+        </Link>
       ))}
     </div>
   );

@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-
 import {
   Sheet,
   SheetClose,
@@ -11,9 +9,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Product } from "@/types";
-import SecondaryProductCard from "./SecondaryProductCard";
 import PrimaryButton from "./Buttons/PrimaryButton";
 import { HiShoppingBag } from "react-icons/hi";
+import CompareAndWishListProductCard from "./CompareAndWishListProductCard";
 
 type Props = {
   trigger: React.ReactNode;
@@ -21,6 +19,7 @@ type Props = {
   className?: string;
   title: string;
   description?: string;
+  type?: "wishlist" | "comparelist";
 };
 export function SheetContainer({
   trigger,
@@ -28,18 +27,25 @@ export function SheetContainer({
   className,
   title,
   description,
+  type,
 }: Props) {
   return (
     <Sheet>
       <SheetTrigger asChild>{trigger}</SheetTrigger>
-      <SheetContent className="space-y-5 overflow-x-scroll scroll px-3">
+      <SheetContent className="space-y-5 p-3 overflow-y-auto scroll">
         <SheetHeader>
           <SheetTitle>{title}</SheetTitle>
-          <SheetDescription>{description}</SheetDescription>
+          {description && <SheetDescription>{description}</SheetDescription>}
         </SheetHeader>
         <div className="space-y-5">
           {products.map((product: Product, index: number) => {
-            return <SecondaryProductCard product={product} key={index} />;
+            return (
+              <CompareAndWishListProductCard
+                type={type}
+                product={product}
+                key={index}
+              />
+            );
           })}
         </div>
         <SheetFooter>
