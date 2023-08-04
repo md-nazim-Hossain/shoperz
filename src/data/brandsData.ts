@@ -1,74 +1,104 @@
 import { Brand } from "@/types";
 
 export const brandsData: Brand[] = [
-  {
-    image: {
-      src: ["/assets/images/brands/gama.svg", "/assets/images/brands/gama_black.svg"],
-      alt: "Gama",
+    {
+        image: {
+            src: [
+                "/assets/images/brands/gama.svg",
+                "/assets/images/brands/gama_black.svg",
+            ],
+            alt: "Gama",
+        },
+        link: "/",
     },
-    link: "/",
-  },
-  {
-    image: {
-      src: ["/assets/images/brands/technova.svg", "/assets/images/brands/technova_black.svg"],
-      alt: "Technova",
+    {
+        image: {
+            src: [
+                "/assets/images/brands/technova.svg",
+                "/assets/images/brands/technova_black.svg",
+            ],
+            alt: "Technova",
+        },
+        link: "/",
     },
-    link: "/",
-  },
-  {
-    image: {
-      src: ["/assets/images/brands/indiezone.svg", "/assets/images/brands/indiezone_black.svg"],
-      alt: "Indiezone",
+    {
+        image: {
+            src: [
+                "/assets/images/brands/indiezone.svg",
+                "/assets/images/brands/indiezone_black.svg",
+            ],
+            alt: "Indiezone",
+        },
+        link: "/",
     },
-    link: "/",
-  },
-  {
-    image: {
-      src: ["/assets/images/brands/tracic.svg", "/assets/images/brands/tracic_black.svg"],
-      alt: "Tracic",
+    {
+        image: {
+            src: [
+                "/assets/images/brands/tracic.svg",
+                "/assets/images/brands/tracic_black.svg",
+            ],
+            alt: "Tracic",
+        },
+        link: "/",
     },
-    link: "/",
-  },
-  {
-    image: {
-      src: ["/assets/images/brands/gomezbuzz.svg", "/assets/images/brands/gomezbuzz_black.svg"],
-      alt: "Gomezbuzz",
+    {
+        image: {
+            src: [
+                "/assets/images/brands/gomezbuzz.svg",
+                "/assets/images/brands/gomezbuzz_black.svg",
+            ],
+            alt: "Gomezbuzz",
+        },
+        link: "/",
     },
-    link: "/",
-  },
-  {
-    image: {
-      src: ["/assets/images/brands/shopania.svg", "/assets/images/brands/shopania_black.svg"],
-      alt: "Shopania",
+    {
+        image: {
+            src: [
+                "/assets/images/brands/shopania.svg",
+                "/assets/images/brands/shopania_black.svg",
+            ],
+            alt: "Shopania",
+        },
+        link: "/",
     },
-    link: "/",
-  },
-  {
-    image: {
-      src: ["/assets/images/brands/imade.svg", "/assets/images/brands/imade_black.svg"],
-      alt: "Imade",
+    {
+        image: {
+            src: [
+                "/assets/images/brands/imade.svg",
+                "/assets/images/brands/imade_black.svg",
+            ],
+            alt: "Imade",
+        },
+        link: "/",
     },
-    link: "/",
-  },
-  {
-    image: {
-      src: ["/assets/images/brands/upside.svg", "/assets/images/brands/upside_black.svg"],
-      alt: "Upside",
+    {
+        image: {
+            src: [
+                "/assets/images/brands/upside.svg",
+                "/assets/images/brands/upside_black.svg",
+            ],
+            alt: "Upside",
+        },
+        link: "/",
     },
-    link: "/",
-  },
-  {
-    image: {
-      src: ["/assets/images/brands/wofact.svg", "/assets/images/brands/wofact_black.svg"],
-      alt: "Wofact",
+    {
+        image: {
+            src: [
+                "/assets/images/brands/wofact.svg",
+                "/assets/images/brands/wofact_black.svg",
+            ],
+            alt: "Wofact",
+        },
+        link: "/",
     },
-    link: "/",
-  },
-  {
-    image: {
-      src: ["/assets/images/brands/gamerzone.svg", "/assets/images/brands/gamerzone_black.svg"],
-      alt: "Gamerzone",
+    {
+        image: {
+            src: [
+                "/assets/images/brands/gamerzone.svg",
+                "/assets/images/brands/gamerzone_black.svg",
+            ],
+            alt: "Gamerzone",
+        },
+        link: "/",
     },
-    link: "/",
-  },
 ];
