@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:check": "eslint --ignore-path .eslintignore --ext .js,.ts .",
+    "lint:fix": "eslint . --fix",
+    "prettier:check": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "prettier:fix": "prettier --write .",
+    "lint-prettier": "yarn lint:check && yarn prettier:check"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.0.4",
@@ -42,13 +47,8 @@
     "tailwindcss-animate": "^1.0.6",
     "typescript": "5.1.6"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "*": "prettier --write"
+    "src/**/*.{ts,tsx,json,md}": "prettier --write"
   },
   "devDependencies": {
     "@types/react-html-parser": "^2.0.2",
