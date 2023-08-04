@@ -67,7 +67,7 @@ function CompareAndWishListProductCard({ product, type }: Props) {
             </>
           )}
           <div className="flex items-center gap-2">
-            <IconButton className="w-7" />
+            <IconButton className="w-7 group-hover:bg-primary/70 hover:!bg-primary" />
             <IconButton
               method={() => {
                 if (isWishList) {
@@ -88,7 +88,7 @@ function CompareAndWishListProductCard({ product, type }: Props) {
                   ),
                 });
               }}
-              className="w-7 text-white"
+              className="w-7 text-white hover:!bg-primary"
               size={16}
               Icon={FiMinus}
             />

@@ -13,6 +13,7 @@ import CompareAndWishListBtn from "./shared/Buttons/CompareAndWishListBtn";
 import IconButton from "./shared/Buttons/IconButton";
 import PrimaryButton from "./shared/Buttons/PrimaryButton";
 import Color from "./shared/Color";
+import { ModalContainer } from "./shared/ModalContainer";
 import Rating from "./shared/Rating";
 import { Badge } from "./ui/badge";
 
@@ -39,10 +40,18 @@ function ProductDetails() {
               alt={product?.model}
               fill
             />
-            <IconButton
-              Icon={FiSearch}
-              className="absolute top-5 right-5 bg-transparent"
-            />
+            <ModalContainer
+              title={""}
+              trigger={
+                <IconButton
+                  Icon={FiSearch}
+                  className="absolute top-5 right-5 bg-transparent"
+                />
+              }
+              footer={<ModalFooter product={product} />}
+            >
+              <ViewProduct product={product} />
+            </ModalContainer>
           </div>
           <div className="flex items-center gap-3">
             {product?.image.map((image: string, index: number) => (
@@ -100,7 +109,7 @@ function ProductDetails() {
           <hr className="bg-gray-50 w-full" />
 
           <CompareAndWishListBtn product={product} />
-          <h2>${product?.price.toFixed(2)}</h2>
+          <h2>${(+product?.price * quantity).toFixed(2)}</h2>
           <div className="border rounded-3xl px-2 h-10 flex items-center justify-between w-[208px]">
             <IconButton
               disabled={quantity === 1}
@@ -130,3 +139,38 @@ function ProductDetails() {
 }
 
 export default ProductDetails;
+
+const ViewProduct: React.FC<{ product: Product }> = ({ product }) => {
+  return <div>View Product</div>;
+};
+
+const ModalFooter: React.FC<{ product: Product }> = ({ product }) => {
+  return (
+    <div className="pt-5 flex">
+      <div className="flex">
+        <IconButton
+          // disabled={quantity === 1}
+          // method={() => setQuantity(quantity - 1)}
+          Icon={FiMinus}
+          size={20}
+          className="bg-transparent p-0 w-9 h-9 rounded-none"
+        />
+        <IconButton
+          // disabled={quantity === inStock}
+          // method={() => setQuantity(quantity + 1)}
+          Icon={BsPlus}
+          size={20}
+          className="bg-transparent p-0 w-9 h-9 rounded-none"
+        />
+      </div>
+      <div className="flex items-center gap-3">
+        <PrimaryButton
+          title="Add to Cart"
+          className="w-full py-2"
+          Icon={HiShoppingBag}
+        />
+        <CompareAndWishListBtn product={product} />
+      </div>
+    </div>
+  );
+};
