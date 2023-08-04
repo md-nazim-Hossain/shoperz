@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Product } from "@/types";
 import { useEffect, useState } from "react";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { products } from "@/data/productData";
 import { Product } from "@/types";
 import TopProduct from "../TopProduct";

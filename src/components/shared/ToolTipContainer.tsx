@@ -11,7 +11,7 @@ type Props = {
     children: ReactNode;
     className?: string;
 };
-export function TooltipContainer({ trigger, children, className }: Props) {
+export function TooltipContainer({ trigger, children }: Props) {
     return (
         <TooltipProvider>
             <Tooltip>

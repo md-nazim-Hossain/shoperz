@@ -1,20 +1,19 @@
 "use client";
 
-import { Product } from "@/types";
-import Image from "next/image";
-import React from "react";
-import PrimaryButton from "./Buttons/PrimaryButton";
-import { CiShuffle } from "react-icons/ci";
-import { BiSolidHeart, BiHeart } from "react-icons/bi";
-import { HiShoppingBag } from "react-icons/hi";
-import { discountPrice } from "@/utils/discount";
-import Rating from "./Rating";
 import { useAppDispatch, useAppSelector } from "@/redux/Store";
 import {
     toggleCompareList,
     toggleWishList,
 } from "@/redux/slices/ToggleAddListProductSlice";
+import { Product } from "@/types";
+import { discountPrice } from "@/utils/discount";
+import Image from "next/image";
+import { BiHeart, BiSolidHeart } from "react-icons/bi";
+import { CiShuffle } from "react-icons/ci";
+import { HiShoppingBag } from "react-icons/hi";
 import { useToast } from "../ui/use-toast";
+import PrimaryButton from "./Buttons/PrimaryButton";
+import Rating from "./Rating";
 import { TooltipContainer } from "./ToolTipContainer";
 
 type Props = {
@@ -28,6 +27,7 @@ function ListViewProducts({ product }: Props) {
     const isCompareList = compareListProduct.includes(product);
     const dispatch = useAppDispatch();
     const { toast } = useToast();
+
     return (
         <div className="group p-5 border border-light-gray rounded-md lg:flex gap-5 space-y-5 lg:space-y-0">
             <div className="md:flex flex-1 items-center gap-5">

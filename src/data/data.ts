@@ -4,7 +4,6 @@ import {
     SocialProps,
     TopBarFeaturesProps,
 } from "@/types";
-import { BsShop } from "react-icons/bs";
 import {
     FaFacebook,
     FaInstagram,

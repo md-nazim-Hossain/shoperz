@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { products } from "@/data/productData";
 import { Product } from "@/types";
 
@@ -74,7 +75,7 @@ const grouping = (
 };
 
 const groupingByPrice = (
-    map: Map<string, Product[] | any>,
+    map: Map<string, Product[] | any[]>,
     product: Product
 ) => {
     const price = product?.price;
