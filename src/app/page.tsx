@@ -2,7 +2,6 @@ import Categories from "@/components/categories/Categories";
 import Hero from "@/components/home/Hero";
 import HomePolicyCard from "@/components/home/HomePolicyCard";
 import Banner from "@/components/shared/Banner";
-import { ThemeButton } from "@/components/shared/Buttons/ThemeButton";
 import SwiperContainer from "@/components/shared/SwiperContainer";
 import { bannerData } from "@/data/bannerData";
 import { products } from "@/data/productData";
