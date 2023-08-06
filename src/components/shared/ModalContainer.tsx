@@ -28,7 +28,7 @@ export function ModalContainer({
   className,
 }: Props) {
   return (
-    <Dialog open>
+    <Dialog>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent
         className={cn("w-max max-w-[700px] p-5 bg-white", className)}

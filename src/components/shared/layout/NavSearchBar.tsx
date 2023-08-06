@@ -1,4 +1,4 @@
-import { useAppSelector } from "@/redux/Store";
+import { useAppSelector } from "@/services/redux/Store";
 import { numberFormat } from "@/utils/format-data";
 import Image from "next/image";
 import Link from "next/link";

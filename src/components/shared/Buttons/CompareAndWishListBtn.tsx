@@ -1,11 +1,11 @@
 "use client";
 
 import { useToast } from "@/components/ui/use-toast";
-import { useAppDispatch, useAppSelector } from "@/redux/Store";
+import { useAppDispatch, useAppSelector } from "@/services/redux/Store";
 import {
   toggleCompareList,
   toggleWishList,
-} from "@/redux/slices/ToggleAddListProductSlice";
+} from "@/services/redux/slices/ToggleAddListProductSlice";
 import { Product } from "@/types";
 import { BiHeart, BiSolidHeart } from "react-icons/bi";
 import { CiShuffle } from "react-icons/ci";

@@ -7,15 +7,14 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import { BsPlus } from "react-icons/bs";
-import { FiMinus, FiSearch } from "react-icons/fi";
+import { FiMinus } from "react-icons/fi";
 import { HiShoppingBag } from "react-icons/hi";
-import CompareAndWishListBtn from "./shared/Buttons/CompareAndWishListBtn";
-import IconButton from "./shared/Buttons/IconButton";
-import PrimaryButton from "./shared/Buttons/PrimaryButton";
-import Color from "./shared/Color";
-import { ModalContainer } from "./shared/ModalContainer";
-import Rating from "./shared/Rating";
-import { Badge } from "./ui/badge";
+import CompareAndWishListBtn from "../shared/Buttons/CompareAndWishListBtn";
+import IconButton from "../shared/Buttons/IconButton";
+import PrimaryButton from "../shared/Buttons/PrimaryButton";
+import Color from "../shared/Color";
+import Rating from "../shared/Rating";
+import { Badge } from "../ui/badge";
 
 function ProductDetails() {
   const [quantity, setQuantity] = useState(1);
@@ -40,18 +39,6 @@ function ProductDetails() {
               alt={product?.model}
               fill
             />
-            <ModalContainer
-              title={""}
-              trigger={
-                <IconButton
-                  Icon={FiSearch}
-                  className="absolute top-5 right-5 bg-transparent"
-                />
-              }
-              footer={<ModalFooter product={product} />}
-            >
-              <ViewProduct product={product} />
-            </ModalContainer>
           </div>
           <div className="flex items-center gap-3">
             {product?.image.map((image: string, index: number) => (
@@ -139,38 +126,3 @@ function ProductDetails() {
 }
 
 export default ProductDetails;
-
-const ViewProduct: React.FC<{ product: Product }> = ({ product }) => {
-  return <div>View Product</div>;
-};
-
-const ModalFooter: React.FC<{ product: Product }> = ({ product }) => {
-  return (
-    <div className="pt-5 flex">
-      <div className="flex">
-        <IconButton
-          // disabled={quantity === 1}
-          // method={() => setQuantity(quantity - 1)}
-          Icon={FiMinus}
-          size={20}
-          className="bg-transparent p-0 w-9 h-9 rounded-none"
-        />
-        <IconButton
-          // disabled={quantity === inStock}
-          // method={() => setQuantity(quantity + 1)}
-          Icon={BsPlus}
-          size={20}
-          className="bg-transparent p-0 w-9 h-9 rounded-none"
-        />
-      </div>
-      <div className="flex items-center gap-3">
-        <PrimaryButton
-          title="Add to Cart"
-          className="w-full py-2"
-          Icon={HiShoppingBag}
-        />
-        <CompareAndWishListBtn product={product} />
-      </div>
-    </div>
-  );
-};

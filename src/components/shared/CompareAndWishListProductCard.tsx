@@ -1,9 +1,9 @@
 "use client";
-import { useAppDispatch } from "@/redux/Store";
+import { useAppDispatch } from "@/services/redux/Store";
 import {
   toggleCompareList,
   toggleWishList,
-} from "@/redux/slices/ToggleAddListProductSlice";
+} from "@/services/redux/slices/ToggleAddListProductSlice";
 import { Product } from "@/types";
 import { discountPrice } from "@/utils/discount";
 import Image from "next/image";

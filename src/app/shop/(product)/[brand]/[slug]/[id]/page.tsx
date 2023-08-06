@@ -1,9 +1,13 @@
-import ProductDetails from "@/components/ProductDetails";
+import AboutProduct from "@/components/Product/AboutProduct";
+import ProductBundles from "@/components/Product/ProductBundles";
+import ProductDetails from "@/components/Product/ProductDetails";
 
 function page() {
   return (
-    <div>
+    <div className="space-y-10">
       <ProductDetails />
+      <ProductBundles />
+      <AboutProduct />
     </div>
   );
 }
