@@ -1,17 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { products } from "@/data/productData";
-import { Product } from "@/types";
+import { FilterProps, Product } from "@/types";
 
 export const groupProduct = (
-  filterType:
-    | "category"
-    | "brand"
-    | "rating"
-    | "price"
-    | ""
-    | "ram"
-    | "processor"
-    | "colors",
+  filterType: FilterProps,
   productData?: Product[]
 ) => {
   const category = new Map();
