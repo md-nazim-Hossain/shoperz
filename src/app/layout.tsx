@@ -3,6 +3,7 @@ import Footer from "@/components/shared/layout/Footer";
 import Navbar from "@/components/shared/layout/Navbar";
 import Providers from "@/components/shared/layout/Provider";
 import { ThemeProvider } from "@/components/shared/layout/ThemeProvider";
+import TopBar from "@/components/shared/layout/TopBar";
 import TopProducts from "@/components/shared/layout/TopProducts";
 import { Toaster } from "@/components/ui/toaster";
 import { roboto } from "@/lib/font";
@@ -30,7 +31,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Providers>
             <Toaster />
-            {/* <TopBar /> */}
+            <TopBar />
             <Navbar />
             {children}
             <div className="space-y-10 mt-10">
