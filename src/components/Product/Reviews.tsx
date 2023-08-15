@@ -37,17 +37,24 @@ function Reviews({ product }: Props) {
           <div className="flex-1 border-l px-5 space-y-10">
             <h3 className="font-medium">Add Your Review</h3>
             <ReactRating
-              onClick={e => setRating(e)}
+              onClick={e => {
+                setRating(e);
+                setOpen(true);
+              }}
               size={30}
               transition
               showTooltip
               tooltipArray={tooltipArray}
               fillColorArray={fillColorArray}
+              initialValue={rating}
             />
             <ModalContainer
               className="max-w-[500px]"
               open={open}
-              onChange={e => setOpen(e)}
+              onChange={e => {
+                setOpen(e);
+                setRating(0);
+              }}
               trigger={
                 <Button className="bg-primary/70 w-[200px] hover:bg-primary duration-300 font-medium text-white px-5 py-3 rounded-3xl flex justify-center items-center space-x-2">
                   Add a Review
@@ -79,11 +86,11 @@ function Reviews({ product }: Props) {
           </div>
         </div>
       </div>
-      <div className="px-5">
+      <div>
         {Array.from({ length: 10 }).map((_, i) => (
           <div
             key={i}
-            className="flex py-5 items-center gap-5 border-b last:border-b-0"
+            className="flex p-5 items-center gap-5 border-b last:border-b-0"
           >
             <div className="w-max">
               <div className="bg-secondary/10 w-12 h-12 aspect-square relative border-2 border-secondary/30 rounded-full"></div>

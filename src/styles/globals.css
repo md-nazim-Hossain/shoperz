@@ -147,13 +147,6 @@ body::-webkit-scrollbar-track,
 .scroll::-webkit-scrollbar-track {
   border-radius: 10px;
 }
-.style-module_emptyIcons__Bg-FZ,
-.empty-icons,
-.style-module_fillIcons__6---A,
-.filled-icons,
-.star-svg {
-  display: inline-block !important;
-}
 
 /* Handle */
 body::-webkit-scrollbar-thumb,
@@ -161,6 +154,14 @@ body::-webkit-scrollbar-thumb,
   width: 3px;
   background: rgba(15, 23, 42, 0.3);
   border-radius: 10px;
+}
+
+.style-module_emptyIcons__Bg-FZ,
+.empty-icons,
+.style-module_fillIcons__6---A,
+.filled-icons,
+.star-svg {
+  display: inline-block !important;
 }
 
 .container {
