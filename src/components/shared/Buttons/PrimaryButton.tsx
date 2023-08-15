@@ -1,13 +1,16 @@
+import { Button } from "@/components/ui/button";
+import { LucideIcon } from "lucide-react";
 import { IconType } from "react-icons/lib";
 import { twMerge } from "tailwind-merge";
 
 type Props = {
   title: string;
-  Icon?: IconType | undefined;
+  Icon?: IconType | LucideIcon;
   type?: "button" | "submit" | "reset";
   method?: () => void;
   className?: string;
   iconStyle?: string;
+  [key: string]: unknown;
 };
 function PrimaryButton({
   title,
@@ -16,9 +19,11 @@ function PrimaryButton({
   method,
   className,
   iconStyle,
+  ...props
 }: Props) {
   return (
-    <button
+    <Button
+      {...props}
       type={type}
       onClick={method}
       className={twMerge(
@@ -28,7 +33,7 @@ function PrimaryButton({
     >
       <span>{title}</span>
       {Icon && <Icon className={iconStyle} />}
-    </button>
+    </Button>
   );
 }
 

@@ -1,10 +1,7 @@
 "use client";
 
-import { products } from "@/data/productData";
-
 import { Product } from "@/types";
 import Image from "next/image";
-import { useParams } from "next/navigation";
 import { useState } from "react";
 import { BsPlus } from "react-icons/bs";
 import { FiMinus } from "react-icons/fi";
@@ -16,16 +13,14 @@ import Color from "../shared/Color";
 import Rating from "../shared/Rating";
 import { Badge } from "../ui/badge";
 
-function ProductDetails() {
+type Props = {
+  product: Product;
+};
+function ProductDetails({ product }: Props) {
   const [quantity, setQuantity] = useState(1);
-  const { id } = useParams();
-  const product: Product | undefined = products.find(
-    product => product.id === id
-  );
 
   const [activeImage, setActiveImage] = useState(product?.image[0]);
 
-  if (!product) return <div>No product found</div>;
   const inStock = product?.quantity - product?.sold;
 
   return (

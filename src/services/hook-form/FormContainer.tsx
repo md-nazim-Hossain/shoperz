@@ -1,10 +1,16 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ReactNode } from "react";
-import { FormProvider, useForm } from "react-hook-form";
+import {
+  DeepPartial,
+  FieldValues,
+  FormProvider,
+  useForm,
+} from "react-hook-form";
+import { AnyObject, ObjectSchema } from "yup";
 type Props = {
-  onSubmit: (data: any) => void;
-  initialValues: any;
-  schema: any;
+  onSubmit: (data: { [x: string]: unknown }) => void;
+  initialValues: DeepPartial<FieldValues>;
+  schema: ObjectSchema<{ [x: string]: unknown }, AnyObject, unknown, "">;
   children: ReactNode;
 };
 function FormContainer({ onSubmit, initialValues, schema, children }: Props) {

@@ -85,7 +85,7 @@ html {
   }
 
   body {
-    @apply overflow-x-hidden relative font-roboto m-0 p-0;
+    @apply relative font-roboto m-0 p-0;
     scroll-behavior: smooth;
   }
   h1 {
@@ -146,6 +146,13 @@ body::-webkit-scrollbar,
 body::-webkit-scrollbar-track,
 .scroll::-webkit-scrollbar-track {
   border-radius: 10px;
+}
+.style-module_emptyIcons__Bg-FZ,
+.empty-icons,
+.style-module_fillIcons__6---A,
+.filled-icons,
+.star-svg {
+  display: inline-block !important;
 }
 
 /* Handle */

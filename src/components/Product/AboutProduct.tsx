@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
+import { Product } from "@/types";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "../ui/button";
@@ -7,7 +8,10 @@ import ProductDescription from "./ProductDescription";
 import ProductSpecification from "./ProductSpecification";
 import Reviews from "./Reviews";
 
-function AboutProduct() {
+type Props = {
+  product: Product;
+};
+function AboutProduct({ product }: Props) {
   const [active, setActive] = useState(0);
   return (
     <div className="bg-white">
@@ -42,10 +46,10 @@ function AboutProduct() {
             }
           )}
         </div>
-        <div className="border rounded-md rounded-tl-none py-10 px-5">
+        <div className="border rounded-md rounded-tl-none pb-10 px-5">
           {active === 0 && <ProductDescription />}
           {active === 1 && <ProductSpecification />}
-          {active === 2 && <Reviews />}
+          {active === 2 && <Reviews product={product} />}
         </div>
       </div>
     </div>
